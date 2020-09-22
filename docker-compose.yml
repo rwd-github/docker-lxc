@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  lxc:
+    image: rwd1/lxc
+    build: .
+    container_name: lxc
+    hostname: lxctest1
+#    restart: always
+    restart: "no"
+    volumes:
+      - ./data:/data
+      #- /path/to/somedir:/vol/somedir
+#      - /dev/shm:/dev/shm
+    environment:
+      - DISTRIBUTION=alpine
+      - INITIAL_SSH_KEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUXf7CnSARN34sRQIMZoLxH2ndD/1lIayFdFyUPC7SrnJW/P5JIho1XDs1WY+u9N/+JEf1zvNjrjmlt+NTP8KONWEOmEtOCaq3thYZd2KMdJl5fR1s97qay9t1o6uYAqs513x3Gz5r7UfmKrT0FNBOO13/h1x9b7BNvknw0QdA8Coq/ia2Bkzv5hnU095tt67vRQiXmRh7t26kM+5QRQqeXzLj1I6RC2ix944TbDWfQxkVj6VG62rg9MaewCucxBmffqXrHcHG6Ose4mV4+tPS+39wNZYGajwFimc30X7OfI6wEifMHPqB00q9+N9tio8NwxeKlJOYDysdyTdwFTKv"
+    shm_size: 1gb
+    ports:
+      - "33890:3389"
+      - "8022:22"
+    privileged: true
+
+
