@@ -11,8 +11,9 @@ rootfs="/data/rootfs"
 rootfs_tmp="/data/rootfs.tmp"
 
 if not os.path.isdir(rootfs):
-    distribution=os.environ.get("DISTRIBUTION",None).lower()
+    distribution=os.environ.get("DISTRIBUTION",None)
     if (distribution):
+		distribution=distribution.lower()
         try:
             distribution_script = importlib.import_module('distribution_%s'%distribution)
         except ModuleNotFoundError:
