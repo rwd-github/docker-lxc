@@ -1,3 +1,5 @@
+DEPRECATED moved to: https://gitlab.com/ytdocker/collection
+
 # Running stateful linux containers in docker ![](https://img.shields.io/docker/pulls/micwy/lxc.svg?v_DATE)
 
 > :warning: This is a complete rewrite, using LXC only without vagrant. It is able to run LXC containers created with v0.1 but
